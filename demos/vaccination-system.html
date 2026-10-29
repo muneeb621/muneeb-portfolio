@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vaccination Management System — Demo</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#09090F;--bg2:#101019;--card:#151522;--accent:#8B5CF6;--accent2:#38BDF8;--text:#F5F5F7;--muted:#A1A1B5;--border:rgba(255,255,255,.1);--ok:#34D399;--warn:#FBBF24;--bad:#F87171}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+a{color:inherit;text-decoration:none}
+.back{position:fixed;top:16px;left:16px;z-index:10;display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:8px;background:var(--card);border:1px solid var(--border);font-size:13px;color:var(--muted);transition:.2s}
+.back:hover{color:var(--text);border-color:var(--accent)}
+.topbar{background:var(--bg2);border-bottom:1px solid var(--border);padding:18px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.logo{font-weight:700;font-size:18px;background:linear-gradient(135deg,#A78BFA,#38BDF8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.topbar nav{display:flex;gap:18px;font-size:14px;color:var(--muted)}
+.topbar nav span.active{color:var(--text);font-weight:600}
+.wrap{max-width:1100px;margin:0 auto;padding:32px 20px}
+h1{font-size:26px;margin-bottom:6px}
+.sub{color:var(--muted);font-size:14px;margin-bottom:28px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:32px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+.stat b{display:block;font-size:28px;margin-bottom:4px}
+.stat span{color:var(--muted);font-size:13px}
+.stat.v b{color:var(--accent)} .stat.g b{color:var(--ok)} .stat.y b{color:var(--warn)} .stat.b b{color:var(--accent2)}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:28px}
+.panel-head{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.panel-head h2{font-size:16px}
+.search{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;color:var(--text);font-size:13px;width:220px;outline:none}
+.search:focus{border-color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;padding:12px 20px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border);background:var(--bg2)}
+td{padding:12px 20px;border-bottom:1px solid rgba(255,255,255,.05)}
+tr:hover td{background:rgba(139,92,246,.05)}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.badge.done{background:rgba(52,211,153,.15);color:var(--ok)}
+.badge.pend{background:rgba(251,191,36,.15);color:var(--warn)}
+.badge.skip{background:rgba(248,113,113,.15);color:var(--bad)}
+.demo-note{margin-top:36px;text-align:center;color:var(--muted);font-size:12px;border-top:1px solid var(--border);padding-top:20px}
+@media(max-width:640px){.topbar nav{display:none}table{font-size:12px}th,td{padding:10px 12px}.search{width:140px}}
+</style>
+</head>
+<body>
+<a class="back" href="../index.html#projects">&larr; Back to Portfolio</a>
+
+<header class="topbar">
+    <div class="logo">VaxCare</div>
+    <nav>
+        <span class="active">Dashboard</span>
+        <span>Patients</span>
+        <span>Vaccines</span>
+        <span>Records</span>
+        <span>Reports</span>
+    </nav>
+    <span style="font-size:13px;color:var(--muted)">Admin Panel</span>
+</header>
+
+<main class="wrap">
+    <h1>Vaccination Dashboard</h1>
+    <p class="sub">Manage vaccination records, schedules and patient immunity status.</p>
+
+    <section class="stats">
+        <div class="stat v"><b>1,248</b><span>Total Patients</span></div>
+        <div class="stat g"><b>986</b><span>Fully Vaccinated</span></div>
+        <div class="stat y"><b>187</b><span>Partially Vaccinated</span></div>
+        <div class="stat b"><b>75</b><span>Doses Scheduled</span></div>
+    </section>
+
+    <section class="panel">
+        <div class="panel-head">
+            <h2>Recent Vaccination Records</h2>
+            <input class="search" type="text" placeholder="Search patient…" id="q" oninput="filter()">
+        </div>
+        <div style="overflow-x:auto">
+            <table id="tbl">
+                <thead><tr><th>Patient</th><th>Vaccine</th><th>Dose</th><th>Date</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>Ayesha Khan</td><td>Pfizer COVID-19</td><td>Dose 2</td><td>2026-09-12</td><td><span class="badge done">Completed</span></td></tr>
+                    <tr><td>Hamza Ali</td><td>AstraZeneca</td><td>Dose 1</td><td>2026-09-14</td><td><span class="badge pend">Scheduled</span></td></tr>
+                    <tr><td>Sana Malik</td><td>Hepatitis B</td><td>Dose 3</td><td>2026-09-15</td><td><span class="badge done">Completed</span></td></tr>
+                    <tr><td>Bilal Hussain</td><td>Polio (OPV)</td><td>Booster</td><td>2026-09-15</td><td><span class="badge skip">Missed</span></td></tr>
+                    <tr><td>Zara Sheikh</td><td>MMR</td><td>Dose 2</td><td>2026-09-16</td><td><span class="badge done">Completed</span></td></tr>
+                    <tr><td>Usman Tariq</td><td>Pfizer COVID-19</td><td>Dose 1</td><td>2026-09-17</td><td><span class="badge pend">Scheduled</span></td></tr>
+                    <tr><td>Hina Raza</td><td>Typhoid</td><td>Single</td><td>2026-09-17</td><td><span class="badge done">Completed</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <p class="demo-note">Interactive demo — built to showcase the Vaccination Management System UI.<br>Laravel · MySQL · REST APIs</p>
+</main>
+
+<script>
+function filter(){
+    var q=document.getElementById('q').value.toLowerCase();
+    document.querySelectorAll('#tbl tbody tr').forEach(function(r){
+        r.style.display=r.textContent.toLowerCase().includes(q)?'':'none';
+    });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laravel E-commerce — Admin Demo</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a12;--bg2:#10101c;--card:#161625;--accent:#6366f1;--accent2:#a5b4fc;--text:#f5f5f7;--muted:#9ca3af;--border:rgba(255,255,255,.08);--ok:#34d399;--bad:#f87171}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex}
+a{color:inherit;text-decoration:none}
+.back{position:fixed;top:16px;left:16px;z-index:20;display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:8px;background:var(--card);border:1px solid var(--border);font-size:13px;color:var(--muted);transition:.2s}
+.back:hover{color:var(--text);border-color:var(--accent)}
+.sidebar{width:230px;min-height:100vh;background:var(--bg2);border-right:1px solid var(--border);padding:70px 0 20px;flex-shrink:0}
+.brand{font-weight:800;font-size:17px;padding:0 22px 18px;color:var(--accent2)}
+.brand span{color:var(--text)}
+.menu{display:flex;flex-direction:column;gap:2px;padding:0 10px}
+.menu a{padding:10px 14px;border-radius:8px;font-size:13.5px;color:var(--muted);display:flex;align-items:center;gap:10px;transition:.15s}
+.menu a.active,.menu a:hover{background:rgba(99,102,241,.15);color:var(--text)}
+.menu a.active{color:var(--accent2);font-weight:600}
+.main{flex:1;padding:70px 28px 28px;max-width:1100px}
+h1{font-size:24px;margin-bottom:4px}
+.sub{color:var(--muted);font-size:13px;margin-bottom:26px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:28px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px}
+.stat b{display:block;font-size:26px;margin-bottom:4px}
+.stat span{color:var(--muted);font-size:12.5px}
+.stat.i b{color:var(--accent2)} .stat.o b{color:var(--ok)} .stat.r b{color:#fbbf24} .stat.c b{color:#38bdf8}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:24px}
+.panel-head{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.panel-head h2{font-size:15px}
+.add-btn{padding:7px 14px;border-radius:8px;background:var(--accent);color:#fff;font-size:12.5px;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;padding:11px 18px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border);background:var(--bg2);font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+td{padding:11px 18px;border-bottom:1px solid rgba(255,255,255,.04)}
+tr:hover td{background:rgba(99,102,241,.05)}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.badge.paid{background:rgba(52,211,153,.14);color:var(--ok)}
+.badge.pend{background:rgba(251,191,36,.14);color:#fbbf24}
+.badge.ship{background:rgba(56,189,248,.14);color:#38bdf8}
+.demo-note{margin-top:30px;text-align:center;color:var(--muted);font-size:12px;border-top:1px solid var(--border);padding-top:18px}
+@media(max-width:760px){.sidebar{display:none}.main{padding:70px 16px 20px}table{font-size:12px}th,td{padding:9px 10px}}
+</style>
+</head>
+<body>
+<a class="back" href="../index.html#projects">&larr; Back to Portfolio</a>
+
+<aside class="sidebar">
+    <div class="brand">Shop<span>Admin</span></div>
+    <nav class="menu">
+        <a href="#" class="active">📊 Dashboard</a>
+        <a href="#">📦 Orders</a>
+        <a href="#">🛍️ Products</a>
+        <a href="#">👥 Customers</a>
+        <a href="#">🏷️ Categories</a>
+        <a href="#">📈 Reports</a>
+        <a href="#">⚙️ Settings</a>
+    </nav>
+</aside>
+
+<main class="main">
+    <h1>Dashboard</h1>
+    <p class="sub">Overview of your store performance and recent orders.</p>
+
+    <section class="stats">
+        <div class="stat i"><b>Rs 284,500</b><span>Revenue (30d)</span></div>
+        <div class="stat o"><b>342</b><span>Total Orders</span></div>
+        <div class="stat r"><b>28</b><span>Pending Orders</span></div>
+        <div class="stat c"><b>1,109</b><span>Customers</span></div>
+    </section>
+
+    <section class="panel">
+        <div class="panel-head"><h2>Recent Orders</h2><button class="add-btn">+ New Product</button></div>
+        <div style="overflow-x:auto">
+            <table>
+                <thead><tr><th>Order ID</th><th>Customer</th><th>Items</th><th>Amount</th><th>Status</th></tr></thead>
+                <tbody>
+                    <tr><td>#ORD-1042</td><td>Ayesha Khan</td><td>Wireless Earbuds</td><td>Rs 4,990</td><td><span class="badge paid">Paid</span></td></tr>
+                    <tr><td>#ORD-1041</td><td>Hamza Ali</td><td>Smart Watch + Case</td><td>Rs 13,800</td><td><span class="badge ship">Shipped</span></td></tr>
+                    <tr><td>#ORD-1040</td><td>Sana Malik</td><td>Leather Jacket</td><td>Rs 8,900</td><td><span class="badge pend">Pending</span></td></tr>
+                    <tr><td>#ORD-1039</td><td>Bilal Hussain</td><td>Bluetooth Speaker</td><td>Rs 5,600</td><td><span class="badge paid">Paid</span></td></tr>
+                    <tr><td>#ORD-1038</td><td>Zara Sheikh</td><td>Sneakers</td><td>Rs 6,400</td><td><span class="badge ship">Shipped</span></td></tr>
+                    <tr><td>#ORD-1037</td><td>Usman Tariq</td><td>LED Desk Lamp ×2</td><td>Rs 5,600</td><td><span class="badge paid">Paid</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="panel">
+        <div class="panel-head"><h2>Top Products</h2></div>
+        <div style="overflow-x:auto">
+            <table>
+                <thead><tr><th>Product</th><th>Category</th><th>Sold</th><th>Stock</th></tr></thead>
+                <tbody>
+                    <tr><td>Wireless Earbuds Pro</td><td>Electronics</td><td>86</td><td>42</td></tr>
+                    <tr><td>Running Sneakers</td><td>Fashion</td><td>64</td><td>28</td></tr>
+                    <tr><td>Smart Watch Series 8</td><td>Electronics</td><td>51</td><td>19</td></tr>
+                    <tr><td>Ceramic Coffee Set</td><td>Home</td><td>37</td><td>55</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <p class="demo-note">Interactive admin demo — showcasing the Laravel E-commerce panel.<br>Laravel · Blade · Eloquent ORM · MySQL · MVC</p>
+</main>
+</body>
+</html>

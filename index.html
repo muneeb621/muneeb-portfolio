@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Muhammad Muneeb — Full Stack Developer & Flutter Developer. Fresher building modern web and mobile experiences with Laravel, PHP, Flutter, and JavaScript." />
+    <meta name="theme-color" content="#09090F" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f4f4f9" media="(prefers-color-scheme: light)" />
+    <meta name="author" content="Muhammad Muneeb" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://muneeb.dev/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Muhammad Muneeb · Full Stack & Flutter Developer" />
+    <meta property="og:description" content="Fresher full-stack developer building modern web apps with Laravel & PHP and cross-platform mobile apps with Flutter." />
+    <meta property="og:url" content="https://muneeb.dev/" />
+    <meta property="og:site_name" content="MUNEEB.DEV" />
+    <meta property="og:image" content="https://muneeb.dev/assets/og-banner.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="MUNEEB.DEV — Muhammad Muneeb, Full Stack Developer and Flutter Developer" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Muhammad Muneeb · Full Stack & Flutter Developer" />
+    <meta name="twitter:description" content="Fresher full-stack developer building modern web apps with Laravel & PHP and cross-platform mobile apps with Flutter." />
+    <meta name="twitter:image" content="https://muneeb.dev/assets/og-banner.png" />
+
+    <title>Muhammad Muneeb · Full Stack & Flutter Developer</title>
+    <!-- Favicon placeholder: replace with your own -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+    <!-- Fonts (Inter + Space Grotesk) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Enables CSS that hides .reveal elements until JS reveals them -->
+    <script>document.documentElement.classList.add('js');</script>
+    <script>
+        /* Apply saved theme before paint to avoid a flash of the wrong theme. */
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <!-- ===== ICON SPRITE (replaces emoji so glyphs render on every OS) ===== -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true" focusable="false">
+        <symbol id="i-cap" viewBox="0 0 24 24">
+            <path d="M12 4 2 9l10 5 10-5-10-5Z" />
+            <path d="M6 11.5V16c0 1.66 2.69 3 6 3s6-1.34 6-3v-4.5" />
+            <path d="M22 9v5" />
+        </symbol>
+        <symbol id="i-code" viewBox="0 0 24 24">
+            <rect x="2.5" y="4" width="19" height="13" rx="2" />
+            <path d="M8 20.5h8" />
+            <path d="m9 8.5-2.5 2L9 12.5M15 8.5l2.5 2-2.5 2" />
+        </symbol>
+        <symbol id="i-rocket" viewBox="0 0 24 24">
+            <path d="M12 2.5c3.4 2.6 5 6.4 5 10.2L12 17l-5-4.3c0-3.8 1.6-7.6 5-10.2Z" />
+            <circle cx="12" cy="10" r="2" />
+            <path d="m8.5 16.5-2.5 4M15.5 16.5l2.5 4M12 17v3.5" />
+        </symbol>
+        <symbol id="i-palette" viewBox="0 0 24 24">
+            <path d="M12 3a9 9 0 1 0 0 18 2 2 0 0 0 2-2c0-1.1-.9-2-2-2h-1.2a2 2 0 0 1 0-4H16a4 4 0 0 0 4-4c0-3.3-3.6-6-8-6Z" />
+            <circle cx="7.5" cy="10.5" r="1.1" />
+            <circle cx="11" cy="7" r="1.1" />
+            <circle cx="15.5" cy="8.5" r="1.1" />
+        </symbol>
+        <symbol id="i-server" viewBox="0 0 24 24">
+            <rect x="2.5" y="3.5" width="19" height="7" rx="2" />
+            <rect x="2.5" y="13.5" width="19" height="7" rx="2" />
+            <path d="M6.5 7h.01M6.5 17h.01M10 7h4M10 17h4" />
+        </symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24">
+            <rect x="6" y="2.5" width="12" height="19" rx="2.5" />
+            <path d="M10.5 5.5h3" />
+            <path d="M11 18.5h2" />
+        </symbol>
+        <symbol id="i-db" viewBox="0 0 24 24">
+            <ellipse cx="12" cy="5.5" rx="8" ry="3" />
+            <path d="M4 5.5v13c0 1.66 3.58 3 8 3s8-1.34 8-3v-13" />
+            <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" />
+        </symbol>
+        <symbol id="i-terminal" viewBox="0 0 24 24">
+            <rect x="2.5" y="4" width="19" height="16" rx="2" />
+            <path d="m7 9.5 3 2.5-3 2.5M13 15h4" />
+        </symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18" />
+            <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z" />
+        </symbol>
+        <symbol id="i-link" viewBox="0 0 24 24">
+            <path d="M10.5 13.5a4.5 4.5 0 0 0 6.6.4l2.6-2.6a4.5 4.5 0 0 0-6.4-6.4l-1.5 1.5" />
+            <path d="M13.5 10.5a4.5 4.5 0 0 0-6.6-.4l-2.6 2.6a4.5 4.5 0 0 0 6.4 6.4l1.5-1.5" />
+        </symbol>
+        <symbol id="i-ruler" viewBox="0 0 24 24">
+            <path d="M3.5 16.5 16.5 3.5l4 4-13 13z" />
+            <path d="m7 13 2 2M10 10l2 2M13 7l2 2" />
+        </symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24">
+            <rect x="2.5" y="4.5" width="19" height="15" rx="2" />
+            <path d="m21 7-9 5.5L3 7" />
+        </symbol>
+        <symbol id="i-github" viewBox="0 0 24 24">
+            <path stroke="none" fill="currentColor" d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.15 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.62.24 2.85.12 3.15.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12.5C24 5.87 18.63.5 12 .5Z" />
+        </symbol>
+    </svg>
+
+    <!-- ===== SCROLL PROGRESS ===== -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- ===== CURSOR GLOW (desktop) ===== -->
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo" aria-label="MUNEEB.DEV home">MUNEEB<span class="logo-dot">.</span>DEV</a>
+
+            <nav class="nav-menu" id="navMenu" aria-label="Primary navigation">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-primary nav-cta">Let's Talk</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Toggle light / dark theme">
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"/></svg>
+                </button>
+
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ===== HERO ===== -->
+        <section id="home" class="hero section">
+            <div class="container hero-grid">
+                <div class="hero-content reveal">
+                    <!-- Badge: enable/disable by removing 'hidden' class -->
+                    <span class="badge badge-placeholder" id="availabilityBadge">
+                        <span class="badge-dot"></span> Available for Opportunities
+                    </span>
+
+                    <h1 class="hero-title">
+                        Building Digital<br />
+                        Experiences That <span class="gradient-text">Matter.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        I'm <strong>Muhammad Muneeb</strong> — a fresher full-stack developer
+                        passionate about crafting modern web applications with Laravel &amp; PHP,
+                        and building cross-platform mobile apps with Flutter. I focus on clean
+                        architecture, responsive design, and user-friendly experiences.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">Explore My Work</a>
+                        <a href="#resume" class="btn btn-outline" id="heroDownloadCv">Download CV</a>
+                    </div>
+
+                    <div class="hero-socials">
+                        <a href="tel:+923700144052" class="social-link" aria-label="Phone number">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 5.5h3"/><path d="M11 18.5h2"/></svg>
+                        </a>
+                        <a href="https://github.com/muneeb621" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub profile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.15 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.62.24 2.85.12 3.15.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        </a>
+                        <a href="mailto:ladlamuneeb242@gmail.com" class="social-link" aria-label="Email">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal">
+                    <div class="profile-wrapper">
+                        <!-- Profile photo (graceful SVG placeholder if it ever fails to load) -->
+                        <img src="assets/profile.jpeg" alt="Muhammad Muneeb" class="profile-photo" width="320" height="320"
+                             onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 320 320%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%238B5CF6%22/%3E%3Cstop offset=%221%22 stop-color=%22%2338BDF8%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22320%22 height=%22320%22 fill=%22url(%23g)%22 rx=%2216%22/%3E%3Ccircle cx=%22160%22 cy=%22122%22 r=%2248%22 fill=%22rgba(255,255,255,0.9)%22/%3E%3Cpath d=%22M70 268c0-46 40-80 90-80s90 34 90 80v52H70z%22 fill=%22rgba(255,255,255,0.9)%22/%3E%3C/svg%3E';" />
+                        <!-- Floating tech badges -->
+                        <span class="float-badge fb-1">Laravel</span>
+                        <span class="float-badge fb-2">Flutter</span>
+                        <span class="float-badge fb-3">PHP</span>
+                        <span class="float-badge fb-4">MySQL</span>
+                    </div>
+
+                    <!-- Decorative code panel -->
+                    <div class="code-panel" aria-hidden="true">
+                        <div class="code-dots"><span></span><span></span><span></span></div>
+                        <pre><code><span class="c-keyword">class</span> <span class="c-class">Developer</span> {
+  <span class="c-keyword">public</span> <span class="c-fn">build</span>() {
+    <span class="c-keyword">return</span> <span class="c-string">"clean & scalable"</span>;
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT ===== -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">About Me</span>
+                    <h2 class="section-title">A developer driven by <span class="gradient-text">curiosity</span> and craft</h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p>
+                            I'm a passionate full-stack developer currently pursuing my
+                            <strong>Diploma in Software Engineering at Aptech (2024–Present)</strong>.
+                            My journey revolves around building practical, user-focused applications
+                            that solve real problems.
+                        </p>
+                        <p>
+                            I enjoy working across the stack — from designing responsive frontend
+                            interfaces to building robust backend systems with <strong>PHP &amp; Laravel</strong>,
+                            and creating cross-platform mobile apps with <strong>Flutter</strong>. I'm
+                            particularly interested in RESTful API integration, MVC architecture,
+                            and writing clean, maintainable code.
+                        </p>
+                        <p>
+                            As a fresher, I bring fresh energy, a strong learning mindset, and a
+                            genuine commitment to growing into a well-rounded software engineer.
+                        </p>
+
+                        <ul class="about-interests">
+                            <li>Full-stack web development</li>
+                            <li>Backend with PHP &amp; Laravel</li>
+                            <li>Responsive frontend interfaces</li>
+                            <li>Flutter mobile development</li>
+                            <li>RESTful API integration</li>
+                            <li>Practical problem-solving</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-stats reveal">
+                        <div class="stat-card">
+                            <span class="stat-icon"><svg class="ico" aria-hidden="true"><use href="#i-cap"></use></svg></span>
+                            <h3>Diploma in Software Engineering</h3>
+                            <p>Aptech · 2024 – Present</p>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-icon"><svg class="ico" aria-hidden="true"><use href="#i-code"></use></svg></span>
+                            <h3>Full Stack Focus</h3>
+                            <p>Laravel · PHP · Flutter · JS</p>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-icon"><svg class="ico" aria-hidden="true"><use href="#i-rocket"></use></svg></span>
+                            <h3>Always Learning</h3>
+                            <p>Building projects &amp; growing daily</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SKILLS ===== -->
+        <section id="skills" class="section section-alt">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Technical Skills</span>
+                    <h2 class="section-title">Tools &amp; <span class="gradient-text">technologies</span> I work with</h2>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card reveal">
+                        <div class="skill-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-palette"></use></svg></div>
+                        <h3>Frontend</h3>
+                        <div class="skill-tags">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Tailwind CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-server"></use></svg></div>
+                        <h3>Backend</h3>
+                        <div class="skill-tags">
+                            <span>PHP</span><span>Laravel</span><span>RESTful APIs</span><span>MVC</span><span>Eloquent ORM</span>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-phone"></use></svg></div>
+                        <h3>Mobile Development</h3>
+                        <div class="skill-tags">
+                            <span>Flutter</span><span>Dart</span>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-db"></use></svg></div>
+                        <h3>Databases</h3>
+                        <div class="skill-tags">
+                            <span>MySQL</span><span>SQL Server</span>
+                        </div>
+                    </div>
+                    <div class="skill-card reveal">
+                        <div class="skill-card-icon"><svg class="ico" aria-hidden="true"><use href="#i-terminal"></use></svg></div>
+                        <h3>Tools</h3>
+                        <div class="skill-tags">
+                            <span>Git</span><span>GitHub</span><span>Postman</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJECTS ===== -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Featured Projects</span>
+                    <h2 class="section-title">Selected <span class="gradient-text">work</span></h2>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card reveal">
+                        <div class="project-image" role="img" aria-label="Vaccination Management System interface preview">
+                            <div class="mock-window mock-records" aria-hidden="true">
+                                <div class="mock-bar"><i></i><i></i><i></i><u></u></div>
+                                <div class="mock-body">
+                                    <span class="rec"><b></b><span class="mock-line"></span><s></s></span>
+                                    <span class="rec"><b></b><span class="mock-line"></span><s></s></span>
+                                    <span class="rec"><b></b><span class="mock-line"></span><s></s></span>
+                                    <span class="rec"><b></b><span class="mock-line"></span><s></s></span>
+                                </div>
+                            </div>
+                            <span class="project-image-label">Vaccination System</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Vaccination Management System</h3>
+                            <p>A web-based system designed to manage vaccination-related information, built with Laravel and MySQL.</p>
+                            <div class="project-tags">
+                                <span>PHP</span><span>Laravel</span><span>MySQL</span><span>REST APIs</span>
+                            </div>
+                            <div class="project-links">
+                                <span class="btn btn-small btn-outline btn-coming-soon" aria-disabled="true">GitHub · Coming soon</span>
+                                <a href="demos/vaccination-system.html" class="btn btn-small btn-outline">Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card reveal">
+                        <div class="project-image" role="img" aria-label="Valencia Dial e-commerce interface preview">
+                            <div class="mock-window mock-grid" aria-hidden="true">
+                                <div class="mock-bar"><i></i><i></i><i></i><u></u></div>
+                                <div class="mock-body">
+                                    <span class="prod"><b class="thumb"></b><span class="mock-line"></span><span class="mock-line short"></span></span>
+                                    <span class="prod"><b class="thumb"></b><span class="mock-line"></span><span class="mock-line short"></span></span>
+                                    <span class="prod"><b class="thumb"></b><span class="mock-line"></span><span class="mock-line short"></span></span>
+                                </div>
+                            </div>
+                            <span class="project-image-label">Valencia Dial</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Valencia Dial — E-commerce</h3>
+                            <p>An e-commerce project featuring product listings, cart functionality, and a clean responsive interface.</p>
+                            <div class="project-tags">
+                                <span>Laravel</span><span>MySQL</span><span>Tailwind CSS</span><span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <span class="btn btn-small btn-outline btn-coming-soon" aria-disabled="true">GitHub · Coming soon</span>
+                                <a href="demos/valencia-dial.html" class="btn btn-small btn-outline">Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card reveal">
+                        <div class="project-image" role="img" aria-label="Laravel e-commerce admin interface preview">
+                            <div class="mock-window mock-split" aria-hidden="true">
+                                <div class="mock-bar"><i></i><i></i><i></i><u></u></div>
+                                <div class="mock-body">
+                                    <span class="side">
+                                        <span class="mock-line"></span><span class="mock-line"></span>
+                                        <span class="mock-line"></span><span class="mock-line"></span>
+                                    </span>
+                                    <span class="main">
+                                        <b class="hero"></b>
+                                        <span class="mock-line"></span>
+                                        <span class="mock-line short"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="project-image-label">Laravel E-commerce</span>
+                        </div>
+                        <div class="project-body">
+                            <h3>Laravel E-commerce</h3>
+                            <p>A Laravel-based learning project exploring MVC architecture, Eloquent ORM, and Blade templating.</p>
+                            <div class="project-tags">
+                                <span>PHP</span><span>Laravel</span><span>MySQL</span><span>Blade</span><span>MVC</span><span>Eloquent ORM</span>
+                            </div>
+                            <div class="project-links">
+                                <span class="btn btn-small btn-outline btn-coming-soon" aria-disabled="true">GitHub · Coming soon</span>
+                                <a href="demos/laravel-ecommerce.html" class="btn btn-small btn-outline">Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EDUCATION ===== -->
+        <section id="education" class="section section-alt">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Education</span>
+                    <h2 class="section-title">My academic <span class="gradient-text">journey</span></h2>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-status status-progress">In Progress</span>
+                            <h3>Diploma in Software Engineering</h3>
+                            <p class="timeline-meta">Aptech · 2024 – Present</p>
+                            <p>Building a strong foundation in software engineering principles, programming, and modern development practices.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-status status-completed">Completed</span>
+                            <h3>Intermediate</h3>
+                            <p class="timeline-meta">Completed in 2024</p>
+                            <p>Completed higher secondary education, developing analytical and problem-solving skills.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-status status-completed">Completed</span>
+                            <h3>Matriculation</h3>
+                            <p class="timeline-meta">Completed</p>
+                            <p>Completed secondary education, building foundational academic knowledge.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICES ===== -->
+        <section id="services" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Services</span>
+                    <h2 class="section-title">What I can <span class="gradient-text">help with</span></h2>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <div class="service-icon"><svg class="ico" aria-hidden="true"><use href="#i-globe"></use></svg></div>
+                        <h3>Full Stack Web Development</h3>
+                        <p>End-to-end web application development, from database design to responsive frontend interfaces.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon"><svg class="ico" aria-hidden="true"><use href="#i-palette"></use></svg></div>
+                        <h3>Frontend Development</h3>
+                        <p>Clean, responsive, and accessible interfaces built with HTML, CSS, JavaScript, and Tailwind CSS.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon"><svg class="ico" aria-hidden="true"><use href="#i-server"></use></svg></div>
+                        <h3>PHP &amp; Laravel Development</h3>
+                        <p>Robust backend systems using Laravel's MVC architecture, Eloquent ORM, and best practices.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon"><svg class="ico" aria-hidden="true"><use href="#i-link"></use></svg></div>
+                        <h3>REST API Development &amp; Integration</h3>
+                        <p>Building and consuming RESTful APIs to connect applications and services reliably.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon"><svg class="ico" aria-hidden="true"><use href="#i-phone"></use></svg></div>
+                        <h3>Flutter Mobile App Development</h3>
+                        <p>Cross-platform mobile applications with Flutter and Dart, delivering smooth native-like experiences.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon"><svg class="ico" aria-hidden="true"><use href="#i-ruler"></use></svg></div>
+                        <h3>Responsive Website Improvements</h3>
+                        <p>Enhancing existing websites for better responsiveness, performance, and usability across devices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RESUME / CV ===== -->
+        <section id="resume" class="section section-alt">
+            <div class="container">
+                <div class="resume-box reveal">
+                    <div>
+                        <span class="section-tag">Resume</span>
+                        <h2 class="section-title">View or download my <span class="gradient-text">CV</span></h2>
+                        <p class="resume-desc">
+                            Want a quick overview of my background? Download my CV to learn more
+                            about my education, skills, and projects.
+                        </p>
+                    </div>
+                    <div class="resume-actions">
+                        <a href="assets/cv/Muhammad-Muneeb-CV.pdf" class="btn btn-primary" id="downloadCvBtn" target="_blank" rel="noopener">Download CV</a>
+                        <p class="resume-note">PDF · Updated 2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Contact</span>
+                    <h2 class="section-title">Let's build something <span class="gradient-text">together</span></h2>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info reveal">
+                        <h3>Muhammad Muneeb</h3>
+                        <p class="contact-role">Full Stack Developer · Flutter Developer</p>
+
+                        <ul class="contact-list">
+                            <li>
+                                <span class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-phone"></use></svg></span>
+                                <a href="tel:+923700144052">+92 370 0144052</a>
+                            </li>
+                            <li>
+                                <span class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-mail"></use></svg></span>
+                                <a href="mailto:ladlamuneeb242@gmail.com">ladlamuneeb242@gmail.com</a>
+                            </li>
+                            <li>
+                                <span class="contact-icon"><svg class="ico" aria-hidden="true"><use href="#i-github"></use></svg></span>
+                                <a href="https://github.com/muneeb621" target="_blank" rel="noopener noreferrer">github.com/muneeb621</a>
+                            </li>
+                        </ul>
+
+                        <p class="contact-note">
+                            I'm open to internships, freelance projects, and collaborative opportunities.
+                            Feel free to reach out!
+                        </p>
+                    </div>
+
+                    <form class="contact-form reveal" id="contactForm"
+                          action="https://api.web3forms.com/submit" method="POST" novalidate>
+                        <input type="hidden" name="access_key" value="d36b219d-5ae4-48dc-adbd-572dc9c571e6" />
+                        <input type="hidden" name="from_name" value="MUNEEB.DEV Portfolio" />
+                        <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" />
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Your name" required />
+                            <span class="error-message" id="fullNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
+                            <span class="error-message" id="subjectError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Send Message</button>
+                        <p class="form-disclaimer">
+                            Your details are only used to reply to you — no spam, ever.
+                        </p>
+                        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#home" class="logo">MUNEEB<span class="logo-dot">.</span>DEV</a>
+                <p>Building digital experiences that matter.</p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="footer-social">
+                <a href="tel:+923700144052" aria-label="Phone">Phone</a>
+                <a href="https://github.com/muneeb621" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+                <a href="mailto:ladlamuneeb242@gmail.com" aria-label="Email">Email</a>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Muhammad Muneeb. All rights reserved.</p>
+            <button class="back-to-top" id="backToTop" aria-label="Back to top">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+            </button>
+        </div>
+    </footer>
+
+    <!-- WhatsApp floating button -->
+    <a href="https://wa.me/923700144052?text=Hi%20Muneeb%2C%20I%20visited%20your%20portfolio" class="whatsapp-fab" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+        /* Puter.js needs an http(s) origin — skip it on file:// to avoid
+           the "Unsupported Origin" console error. The chatbot then runs on
+           its offline knowledge base. */
+        if (location.protocol === 'http:' || location.protocol === 'https:') {
+            document.write('<script src="https://js.puter.com/v2/"><\/script>');
+        }
+    </script>
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>
